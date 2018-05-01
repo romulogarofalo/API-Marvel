@@ -26,12 +26,11 @@ function getCharacterList() {
     const urlAPI = "http://gateway.marvel.com/v1/public/characters?limit=9&offset="+offset+"&ts="+timeStamp+"&apikey="+publicKey+"&hash="+hash;
 
     // sla mas funcionou
-
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
-            putImages(data);
+            getImages(data);
         }
     };
     xhttp.open("GET", urlAPI, true);
@@ -39,6 +38,24 @@ function getCharacterList() {
 }
 
 
-function showHistorys() {
-    
+function showHistorys(elemento) {
+
+    const codigo = elemento.parentNode.getElementsByTagName("h5")[1].textContent;//codigo do personagem
+
+    const timeStamp = Date.now().toString();//tempo agora
+    const hash = createHash(timeStamp);//hash para validar a requisição
+
+    const urlAPI = "https://gateway.marvel.com:443/v1/public/characters/"+codigo+"/stories?apikey="+hash;
+
+    // sla mas funcionou
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            getHistorys(data);
+        }
+    };
+    xhttp.open("GET", urlAPI, true);
+    xhttp.send();
+
 }
