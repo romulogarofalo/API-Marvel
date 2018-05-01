@@ -1,0 +1,41 @@
+const privateKey = "";
+const publicKey = "";
+const maxCharacters = 1500;
+
+
+
+
+function createHash(timeStamp) {
+
+    const toBeHashed = timeStamp + privateKey + publicKey;
+    const hashedMessage = md5(toBeHashed);
+    return hashedMessage;
+
+}
+
+function getCharacterList() {
+
+    //tempo agora
+    const timeStamp = Date.now().toString();
+    //numero randomico de herois
+    const offset = Math.floor((Math.random() * maxCharacters) + 1);
+    //hash para validar a requisição
+    const hash = createHash(timeStamp);
+
+    
+    const urlAPI = "http://gateway.marvel.com/v1/public/characters?limit=9&offset="+offset+"&ts="+timeStamp+"&apikey="+publicKey+"&hash="+hash;
+
+    // sla mas funcionou
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            putImages(data);
+        }
+    };
+    xhttp.open("GET", urlAPI, true);
+    xhttp.send();
+
+
+}
