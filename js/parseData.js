@@ -16,6 +16,30 @@ function getImages(dados){
 
 function getHistorys(dados){
 
+    //<a href="#" class="list-group-item list-group-item-action">Cras justo odio</a>
+    content = document.querySelector("#historys");
+    if(dados["data"]["count"] < 0){
+        //diz que n tem nenhuma historia
+        return
+    }
+    console.log(dados["data"])
+    console.log(dados["data"]["results"]);
 
+    dados["data"]["results"].forEach(element => {
+        
+        title = document.createElement("a");
+        title.classList.add("list-group-item");
+        title.classList.add("list-group-item-action");
+        title.textContent = element["title"];
+        content.appendChild(title);
+    });
     
+}
+
+function clear() {
+    content = document.querySelector("#historys");
+    console.log("removendo");
+    
+    content.map(removeChild);
+
 }

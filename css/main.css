@@ -1,9 +1,21 @@
 .card {
     margin: 20px;
-
-
+    
 }
 
-.center {
-    
+
+.row {
+
+    margin:auto;
+    max-width: 1200px;
+}
+
+body {
+    background-image: url("../marvelBackground.gif");
+}
+
+h1 {
+    margin:auto;
+    max-width: 1200px;
+    color: blanchedalmond;
 }

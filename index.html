@@ -14,7 +14,7 @@
     <h1>Personagens</h1>
       <div class="row">
         <div class="card" style="width: 18rem;" id="c0">
-          <img id="i0" class="card-img-top" src="" alt="Card image cap" >
+          <img id="i0" class="card-img-top img-thumbnail" src="" alt="Card image cap" >
           <div class="card-body">
             <h5 class="card-title" id="n0" >Card title</h5>
             <h5 class="card-title" id="cod0" >Card title</h5>
@@ -24,20 +24,20 @@
       
     
         <div class="card" style="width: 18rem;" id="c1">
-          <img id="i1" class="card-img-top" src="" alt="Card image cap">
+          <img id="i1" class="card-img-top img-thumbnail" src="" alt="Card image cap">
           <div class="card-body">
             <h5 id="n1" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod1" >Card title</h5>
-            <a href="#" onclick="showHistorys()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Stories</a>
+            <a href="#" onclick="showHistorys(this)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Stories</a>
           </div>
         </div>
 
         <div class="card" style="width: 18rem;" id="c2">
-          <img id="i2" class="card-img-top" src="" alt="Card image cap">
+          <img id="i2" class="card-img-top img-thumbnail" src="" alt="Card image cap">
           <div class="card-body">
             <h5 id="n2" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod2" >Card title</h5>
-            <a href="#" onclick="showHistorys()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Stories</a>
+            <a href="#" onclick="showHistorys(this)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Stories</a>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@
           <div class="card-body">
             <h5 id="n3" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod3" >Card title</h5>
-            <a href="#" onclick="showHistorys()" class="btn btn-primary">Stories</a>
+            <a href="#" onclick="showHistorys(this)" class="btn btn-primary">Stories</a>
           </div>
         </div>
 
@@ -56,7 +56,7 @@
           <div class="card-body">
             <h5 id="n4" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod4" >Card title</h5>
-            <a href="#" onclick="showHistorys()" class="btn btn-primary">Stories</a>
+            <a href="#" onclick="showHistorys(this)" class="btn btn-primary">Stories</a>
           </div>
         </div>
 
@@ -65,7 +65,7 @@
           <div class="card-body">
             <h5 id="n5" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod5" >Card title</h5>
-            <a href="#" onclick="showHistorys()" class="btn btn-primary">Stories</a>
+            <a href="#" onclick="showHistorys(this)" class="btn btn-primary">Stories</a>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@
           <div class="card-body">
             <h5 id="n6" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod6" >Card title</h5>
-            <a href="#"  onclick="showHistorys()" class="btn btn-primary">Stories</a>
+            <a href="#"  onclick="showHistorys(this)" class="btn btn-primary">Stories</a>
           </div>
         </div>
         <div class="card" style="width: 18rem;" id="c7">
@@ -83,7 +83,7 @@
           <div class="card-body">
             <h5 id="n7" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod7" >Card title</h5>
-            <a href="#" onclick="showHistorys()" class="btn btn-primary">Stories</a>
+            <a href="#" onclick="showHistorys(this)" class="btn btn-primary">Stories</a>
           </div>
         </div>
         <div class="card" style="width: 18rem;" id="c8">
@@ -91,7 +91,7 @@
           <div class="card-body">
             <h5 id="n8" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod8" >Card title</h5>
-            <a href="#" onclick="showHistorys()" class="btn btn-primary">Stories</a>
+            <a href="#" onclick="showHistorys(this)" class="btn btn-primary">Stories</a>
           </div>
         </div>
       </div>
@@ -100,26 +100,21 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Historys</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
-                ...
+              <div class="modal-body" >
+                <div class="list-group" id="historys">
+                </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clear()" >Close</button>
               </div>
             </div>
           </div>
         </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <span id="data" style="visibility: hidden">
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
