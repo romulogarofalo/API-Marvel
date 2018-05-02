@@ -36,10 +36,11 @@ function getHistorys(dados){
     
 }
 
-function clear() {
-    content = document.querySelector("#historys");
+$("#exampleModal").on("hidden.bs.modal", function () {
     console.log("removendo");
+    content = document.querySelector("#historys");
+
     while (content.firstChild) {
         content.removeChild(content.firstChild);
     }
-}
+});
