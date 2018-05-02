@@ -47,7 +47,7 @@
           <div class="card-body">
             <h5 id="n3" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod3" >Card title</h5>
-            <a href="#" onclick="showHistorys(this)" class="btn btn-primary">Stories</a>
+            <a href="#" onclick="showHistorys(this)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Stories</a>
           </div>
         </div>
 
@@ -56,7 +56,7 @@
           <div class="card-body">
             <h5 id="n4" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod4" >Card title</h5>
-            <a href="#" onclick="showHistorys(this)" class="btn btn-primary">Stories</a>
+            <a href="#" onclick="showHistorys(this)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Stories</a>
           </div>
         </div>
 
@@ -65,7 +65,7 @@
           <div class="card-body">
             <h5 id="n5" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod5" >Card title</h5>
-            <a href="#" onclick="showHistorys(this)" class="btn btn-primary">Stories</a>
+            <a href="#" onclick="showHistorys(this)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Stories</a>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@
           <div class="card-body">
             <h5 id="n6" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod6" >Card title</h5>
-            <a href="#"  onclick="showHistorys(this)" class="btn btn-primary">Stories</a>
+            <a href="#"  onclick="showHistorys(this)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Stories</a>
           </div>
         </div>
         <div class="card" style="width: 18rem;" id="c7">
@@ -83,7 +83,7 @@
           <div class="card-body">
             <h5 id="n7" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod7" >Card title</h5>
-            <a href="#" onclick="showHistorys(this)" class="btn btn-primary">Stories</a>
+            <a href="#" onclick="showHistorys(this)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Stories</a>
           </div>
         </div>
         <div class="card" style="width: 18rem;" id="c8">
@@ -91,7 +91,7 @@
           <div class="card-body">
             <h5 id="n8" class="card-title">Card title</h5>
             <h5 class="card-title" id="cod8" >Card title</h5>
-            <a href="#" onclick="showHistorys(this)" class="btn btn-primary">Stories</a>
+            <a href="#" onclick="showHistorys(this)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Stories</a>
           </div>
         </div>
       </div>
@@ -101,15 +101,13 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Historys</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                </button>
               </div>
-              <div class="modal-body" >
+              <div class="modal-body">
                 <div class="list-group" id="historys">
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clear()" >Close</button>
+                <button type="button" onclick="clear()" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -124,7 +122,17 @@
     <script src="js/requests.js"></script>
     <script src="js/parseData.js"> </script>
     <script>
-      getCharacterList()
+      getCharacterList();
+      
+      
+      function clear() {
+          console.log("removendo");
+          content = document.querySelector("#historys");
+          
+          while(content.fristChild){
+              content.removeChild(fristChild);
+          }
+      }
     </script>
   </body>
 </html>

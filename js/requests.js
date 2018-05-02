@@ -40,8 +40,8 @@ function getCharacterList() {
 
 function showHistorys(elemento) {
 
-    const codigo = elemento.parentNode.getElementsByTagName("h5")[1].textContent;//codigo do personagem
-
+    const codigo = elemento.parentNode.getElementsByTagName("h5")[1].textContent.substring(4, 11);//codigo do personagem
+    console.log(codigo);
     const timeStamp = Date.now().toString();//tempo agora
     const hash = createHash(timeStamp);//hash para validar a requisição
 

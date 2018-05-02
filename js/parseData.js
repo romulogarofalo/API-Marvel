@@ -39,7 +39,7 @@ function getHistorys(dados){
 function clear() {
     content = document.querySelector("#historys");
     console.log("removendo");
-    
-    content.map(removeChild);
-
+    while (content.firstChild) {
+        content.removeChild(content.firstChild);
+    }
 }
