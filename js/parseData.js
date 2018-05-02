@@ -8,8 +8,8 @@ function getImages(dados){
         let primeiro = coisasPersonagens[index];
         quadrado = document.querySelector("#c"+index+"");
         quadrado.querySelector("#i"+index+"").src = primeiro["thumbnail"]["path"] +"."+ primeiro["thumbnail"]["extension"];
-        quadrado.querySelector("#n"+index+"").textContent = primeiro["name"];
-        quadrado.querySelector("#cod"+index+"").textContent = primeiro["id"];
+        quadrado.querySelector("#n"+index+"").textContent = "Nome: "+primeiro["name"];
+        quadrado.querySelector("#cod"+index+"").textContent = "Id: "+primeiro["id"];
     }
 
 }

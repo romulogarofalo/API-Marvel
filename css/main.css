@@ -7,7 +7,7 @@
 .row {
 
     margin:auto;
-    max-width: 1200px;
+    max-width: 1000px;
 }
 
 body {
@@ -16,6 +16,6 @@ body {
 
 h1 {
     margin:auto;
-    max-width: 1200px;
+    max-width: 950px;
     color: blanchedalmond;
 }
